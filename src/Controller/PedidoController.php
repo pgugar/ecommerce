@@ -10,9 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 class PedidoController extends AbstractController
 {
-    /**
-     * @Route("/mis-pedidos", name="mis_pedidos")
-     */
+   
     public function verPedidos(UserInterface $usuario): Response
     {
         // Se obtiene el repositorio de la entidad adecuada y se buscan los pedidos del usuario autenticado.
