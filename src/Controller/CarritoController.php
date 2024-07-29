@@ -11,24 +11,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Service\EmailServicio;
+
 
 
 class CarritoController extends AbstractController
 {
-    private $emailServicio;
- 
-
-    // Inyección de dependencias para el servicio de correo electrónico y el logger
-    public function __construct(EmailServicio $emailServicio)
-    {
-        $this->emailServicio = $emailServicio;
-        
-    }
-
-    /**
-     * @Route("/añadir-producto/{id}", name="añadir_producto", methods={"POST"})
-     */
+    
     public function añadirProducto(int $id, Request $request, EntityManagerInterface $entityManager, SessionInterface $session): Response
     {
         // Busca el producto por su ID
@@ -85,9 +73,7 @@ class CarritoController extends AbstractController
         return $this->redirectToRoute('ver_carrito');
     }
 
-    /**
-     * @Route("/eliminar_producto_id/{id}", name="eliminar_producto_id", methods={"POST"})
-     */
+    
     public function eliminarProducto($id, Request $request, SessionInterface $session): Response
     {
         // Verifica el token CSRF para seguridad
@@ -120,9 +106,7 @@ class CarritoController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/editar-producto/{id}", name="editar_producto", methods={"POST"})
-     */
+    
     public function editarProducto(int $id, Request $request, EntityManagerInterface $entityManager, SessionInterface $session): Response
     {
         // Verifica el token CSRF para seguridad
@@ -175,9 +159,7 @@ class CarritoController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/ver-carrito", name="ver_carrito")
-     */
+    
     public function verCarrito(SessionInterface $session, Request $request): Response
     {
         // Obtiene el carrito del usuario autenticado o anónimo
@@ -206,9 +188,7 @@ class CarritoController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/checkout", name="checkout", methods={"POST"})
-     */
+    
     public function checkout(Request $request, SessionInterface $session, EntityManagerInterface $entityManager): Response
     {
         // Obtiene el usuario autenticado
