@@ -8,9 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AboutUsController extends AbstractController
 {
-    /**
-     * @Route("/aboutUs", name="aboutUs")
-     */
+
     public function contact(): Response
     {
         // Obtiene el usuario autenticado actualmente
