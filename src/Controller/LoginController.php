@@ -11,9 +11,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class LoginController extends AbstractController
 {
-    /**
-     * @Route("/login", name="login")
-     */
+    
     public function login(AuthenticationUtils $authenticationUtils, SessionInterface $session)
     {
         $usuario = $this->getUser();
@@ -39,9 +37,7 @@ class LoginController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/logout", name="logout")
-     */
+    
     public function logout(SessionInterface $session)
     {
         //Se realizó modificación posterior, por errores que surgieron con el carrito. De esta forma, Symfony maneja automáticamente esta parte.
