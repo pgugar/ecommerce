@@ -255,8 +255,7 @@ class CarritoController extends AbstractController
             $entityManager->flush();
             $entityManager->commit();
 
-            // Envía un correo de confirmación de compra
-            $this->emailServicio->sendPurchaseConfirmationEmail($usuario->getEmail());
+            
 
             // Redirige a la vista del carrito con un mensaje de éxito
             return $this->redirectToRoute('ver_carrito', [
