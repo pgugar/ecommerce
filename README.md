@@ -31,6 +31,17 @@ La aplicación filtra atendiendo a dos parámetros de los productos:
 - Categoría: se pueden filtrar los productos atendiendo a la categoría de los mismos.
 Según la lógica de negocio de la aplicación estas clasificaciones son independientes entre sí.
 
+CARPETAS Y ARCHIVOS:
+
+Es una aplicación realizada con Symfony. En este repositorio se incluyen las carpetas fundamentales para el funcionamiento y personalización del proyecto. 
+
+a) src
+- Controller.
+- Entity.
+- Form.
+- Templates.
+
+
 
 
 
